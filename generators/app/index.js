@@ -2,6 +2,7 @@
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
+var mkdirp = require('mkdirp');
 
 module.exports = yeoman.generators.Base.extend({
   initializing: function () {
@@ -51,7 +52,7 @@ module.exports = yeoman.generators.Base.extend({
       this.fs.copy(
         this.templatePath('_webpack.config.js'),
         this.destinationPath('webpack.config.js')
-      )
+      );
     },
 
     projectfiles: function () {

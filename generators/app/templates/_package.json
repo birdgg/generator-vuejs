@@ -1,0 +1,22 @@
+{
+  "name": "<%= projectName %>",
+  "version": "0.0.0",
+  "description": "enter your description",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch"
+  },
+  "dependencies": {
+    "director": "^1.2.8",
+    "vue": "^0.12.8",
+    "vue-resource": "^0.1.10"
+  },
+  "devDependencies": {
+    "css-loader": "^0.15.6",
+    "html-loader": "^0.3.0",
+    "style-loader": "^0.12.3",
+    "vue-loader": "^2.1.1",
+    "webpack": "^1.10.5"
+  }
+}

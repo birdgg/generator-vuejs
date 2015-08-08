@@ -1,7 +1,9 @@
 var Vue = require('vue');
-var Router = require('director').Router;
-var vueResource = require('vue-resource');
-Vue.use(vueResource);
 Vue.config.debug = true;
 var app = new Vue(require('./app.vue'));
+
+<% if (includeDirect) { %>
+var Router = require('director').Router;
 var router = new Router();
+router.init('/');
+<% } %>

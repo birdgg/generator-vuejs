@@ -8,7 +8,9 @@ $ yo vuejs
 ```
 
 ### Command
-`npm run watch`  
+`npm run watch` 
+`npm run build`
+`npm run server`
 ## License
 
 MIT

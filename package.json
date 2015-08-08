@@ -1,7 +1,7 @@
 {
   "name": "generator-vuejs",
-  "version": "0.0.3",
-  "description": "Tinydust vuejs project generator",
+  "version": "0.0.5",
+  "description": "Tinydust vuejs project generator with ES6 support",
   "license": "MIT",
   "main": "app/index.js",
   "repository": "birdeggegg/generator-vue",
@@ -18,7 +18,8 @@
   ],
   "keywords": [
     "yeoman-generator",
-    "vuejs"
+    "vuejs",
+    "babel"
   ],
   "dependencies": {
     "chalk": "^1.0.0",

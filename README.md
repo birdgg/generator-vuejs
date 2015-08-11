@@ -1,3 +1,4 @@
+A simple vuejs project generator using Yeoman.
 ## Getting Started
 
 ### Install && Usage
@@ -9,8 +10,8 @@ $ yo vuejs
 
 ### Command
 ```
-npm run watch 
-npm run build
+npm run watch   
+npm run build	
 npm run server
 ```
 ## License

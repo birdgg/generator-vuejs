@@ -63,6 +63,7 @@ module.exports = yeoman.generators.Base.extend({
     this._copy('_webpack.production.js', 'webpack.production.js');
     this._copy('_webpack.server.js', 'webpack.server.js');
     this._copy('_gitignore', '.gitignore');
+    this._copy('_eslintrc', '.eslintrc')
   },
 
   _copy: function(from, to) {

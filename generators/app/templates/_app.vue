@@ -5,10 +5,9 @@
 
 <script lang="babel">
 export default {
-	data() {
-		return {
-			text: 'vue'
-		}
+	el: '#app',
+	data: {
+		text: 'vue'
 	}
 }	
 </script>

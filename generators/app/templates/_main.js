@@ -1,13 +1,12 @@
-import Vue from 'vue'
+var Vue = require('vue');
 <% if (includeResource) { %>
-import vueResource from 'vue-resource'
+var vueResource = require('vue-resource');
 Vue.use(vueResource);
 <% } %>
 Vue.config.debug = true;
-let app = new Vue(require('./app.vue'));
+var app = new Vue(require('./app.vue'));
 
 <% if (includeDirect) { %>
-import { Router } from 'director'
-let router = new Router();
-router.init('/');
+var Router = require('director').Router;
+var router = new Router();
 <% } %>

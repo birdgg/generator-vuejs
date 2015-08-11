@@ -1,7 +1,7 @@
 {
   "name": "generator-vuejs",
-  "version": "0.0.5",
-  "description": "Tinydust vuejs project generator with ES6 support",
+  "version": "0.0.7",
+  "description": "Tinydust vuejs project generator",
   "license": "MIT",
   "main": "app/index.js",
   "repository": "birdeggegg/generator-vue",

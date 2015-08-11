@@ -3,13 +3,14 @@
 <div>Hello {{ text }}</div> 
 </template>
 
-<script>
-	module.exports = {
-		el: '#app',
-		data: {
-			text: 'Vue'
+<script lang="babel">
+export default {
+	data() {
+		return {
+			text: 'vue'
 		}
 	}
+}	
 </script>
 
 <style>

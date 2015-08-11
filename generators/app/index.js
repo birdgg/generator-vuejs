@@ -61,6 +61,7 @@ module.exports = yeoman.generators.Base.extend({
     this._copy('_app.vue', './src/app.vue');
     this._copy('_webpack.config.js', 'webpack.config.js');
     this._copy('_webpack.production.js', 'webpack.production.js');
+    this._copy('_webpack.server.js', 'webpack.server.js');
     this._copy('_gitignore', '.gitignore');
   },
 

@@ -1,11 +1,10 @@
-var webpack = require("webpack");
 module.exports = {
   entry: {
-  	app: ["./src/main.js"]
+    app: ["webpack/hot/dev-server", "./src/main.js"]
   },
   output: {
-  	path: './build',
-    filename: "bundle.min.js"
+    path: './build',
+    filename: "bundle.js"
   },
   module: {
     loaders: [
@@ -13,7 +12,8 @@ module.exports = {
       { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader"}
     ]
   },
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin({minimize: true})
-  ]
+  devtool: 'source-map',
+  devServer: {
+    contentBase: './build'
+  }
 }

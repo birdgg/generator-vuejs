@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "./node_modules/.bin/webpack-dev-server --hot",
+    "server": "./node_modules/.bin/webpack-dev-server --hot --config webpack.server.js",
     "build": "webpack --config webpack.production.js",
-    "watch": "webpack -d --watch"
+    "watch": "webpack --watch"
   },
   "dependencies": {<% if (includeDirect) { %>
     "director": "^1.2.8",<% } %><% if (includeResource) { %>
@@ -15,7 +15,6 @@
   },
   "devDependencies": {
     "css-loader": "^0.15.6",
-    "html-loader": "^0.3.0",
     "style-loader": "^0.12.3",
     "vue-loader": "^2.1.1",
     "babel-loader": "^5.3.2",

@@ -28,8 +28,8 @@ module.exports = yeoman.generators.Base.extend({
       name: 'features',
       message: 'What more would you like?',
       choices: [{
-        name: 'direct router',
-        value: 'includeDirect',
+        name: 'vue-router',
+        value: 'includeRouter',
         checked: false
       }, {
         name: 'vue-resource',
@@ -44,10 +44,10 @@ module.exports = yeoman.generators.Base.extend({
 
       function hasFeature(feat) { return features.indexOf(feat) !== -1; }
 
-      this.includeDirect = hasFeature('includeDirect');
+      this.includeDirect = hasFeature('includeRouter');
       this.includeResource = hasFeature('includeResource');
 
-      this.config.set('includeDirect', this.includeDirect);
+      this.config.set('includeRouter', this.includeDirect);
       this.config.set('includeResource', this.includeResource);
       done();
     }.bind(this));

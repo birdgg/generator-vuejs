@@ -3,12 +3,12 @@ var Vue = require('vue');
 var vueResource = require('vue-resource');
 Vue.use(vueResource);
 <% } %>
-Vue.config.debug = true;
+Vue.config.debug = process.env.NODE_ENV !== 'production'
 
 <% if (includeRouter) { %>
 var VueRouter = require('vue-router');
 Vue.use(VueRouter);
-// create router
+
 var router = new VueRouter({
   history: true,
   saveScrollPosition: true

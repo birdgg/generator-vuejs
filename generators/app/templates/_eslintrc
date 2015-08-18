@@ -1,7 +1,12 @@
 {
   "env": {
     "browser": true,
-    "node": true
+    "node": true,
+    "es6": true,
+  },
+
+  "ecmaFeatures": {
+    "modules": 1
   },
 
   "rules": {

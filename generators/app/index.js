@@ -2,7 +2,6 @@
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
-var mkdirp = require('mkdirp');
 
 module.exports = yeoman.generators.Base.extend({
   initializing: function () {
@@ -35,6 +34,10 @@ module.exports = yeoman.generators.Base.extend({
         name: 'vue-resource',
         value: 'includeResource',
         checked: false
+      },{
+        name: 'stylus',
+        value: 'includeStylus',
+        checked: false
       }]
     }];
 
@@ -44,11 +47,13 @@ module.exports = yeoman.generators.Base.extend({
 
       function hasFeature(feat) { return features.indexOf(feat) !== -1; }
 
-      this.includeDirect = hasFeature('includeRouter');
+      this.includeRouter = hasFeature('includeRouter');
       this.includeResource = hasFeature('includeResource');
+      this.includeStylus = hasFeature('includeStylus');
 
-      this.config.set('includeRouter', this.includeDirect);
+      this.config.set('includeRouter', this.includeRouter);
       this.config.set('includeResource', this.includeResource);
+      this.config.set('includeStylus', this.includeStylus);
       done();
     }.bind(this));
   },
@@ -63,7 +68,10 @@ module.exports = yeoman.generators.Base.extend({
     this._copy('_webpack.production.js', 'webpack.production.js');
     this._copy('_webpack.server.js', 'webpack.server.js');
     this._copy('_gitignore', '.gitignore');
-    this._copy('_eslintrc', '.eslintrc')
+    this._copy('_eslintrc', '.eslintrc');
+    if(this.config.get('includeRouter')) {
+      this._copy('_routeExample', './src/route-example.js');
+    }
   },
 
   _copy: function(from, to) {

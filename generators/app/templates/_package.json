@@ -13,7 +13,8 @@
     "vue-resource": "^0.1.10", <% } %>
     "vue": "^0.12.10"
   },
-  "devDependencies": {
+  "devDependencies": {<% if (includeStylus) { %>
+    "stylus-loader": "^1.2.1",<% } %>
     "css-loader": "^0.15.6",
     "style-loader": "^0.12.3",
     "vue-loader": "^2.1.1",

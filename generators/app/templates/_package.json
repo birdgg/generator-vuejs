@@ -8,9 +8,9 @@
     "build": "webpack --config webpack.production.js",
     "watch": "webpack --watch"
   },
-  "dependencies": {<% if (includeRouter) { %>
-    "vue-router": "^0.5.0",<% } %><% if (includeResource) { %>
-    "vue-resource": "^0.1.10", <% } %>
+  "dependencies":{<% if (includeRouter) { %>
+    "vue-router": "^0.5.1",<% } %><% if (includeResource) { %>
+    "vue-resource": "^0.1.13",<% } %>
     "vue": "^0.12.10"
   },
   "devDependencies": {<% if (includeStylus) { %>

@@ -3,7 +3,7 @@
 <div>Hello {{ text }}</div> 
 </template>
 
-<script lang="babel">
+<script>
 export default {
 	el: '#app',
 	data: {

@@ -1,4 +1,5 @@
 var webpack = require('webpack')
+var vue = require('vue-loader')
 
 module.exports = {
   entry: {
@@ -10,8 +11,10 @@ module.exports = {
   },
   module: {
     loaders: [
-      { test: /\.vue$/, loader: 'vue-loader' },
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'}
+      { test: /\.vue$/, loader: vue.withLoaders({
+        js: 'babel?optional[]=runtime'
+      }) },
+      { test: /\.js$/, exclude: /node_modules/, loader: 'babel?optional[]=runtime'}
     ]
   },
   plugins: [

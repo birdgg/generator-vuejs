@@ -1,7 +1,7 @@
 {
   "name": "generator-vuejs",
-  "version": "0.1.2",
-  "description": "A simple vuejs project generator",
+  "version": "0.1.3",
+  "description": "A simple Vue + Webpack yeoman generator",
   "license": "MIT",
   "main": "app/index.js",
   "repository": "birdeggegg/generator-vue",

@@ -9,11 +9,9 @@ var VueRouter = require('vue-router')
 Vue.use(VueRouter)
 
 var router = new VueRouter({
-  history: true,
-  saveScrollPosition: true
 })
-// please refer to ./route-example to create your router file
-// require('./route-example')(router)
+
+require('./router-config')(router)
 var App = Vue.extend(require('./app.vue'))
 router.start(App, '#app')<% } %><% if (!includeRouter) { %>
 var App = new Vue(require('./app.vue'))<% } %>

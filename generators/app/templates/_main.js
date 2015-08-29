@@ -1,17 +1,18 @@
-var Vue = require('vue')<% if (includeResource) { %>
+import Vue from 'vue<% if (includeResource) { %>
 
-var vueResource = require('vue-resource')
+import vueResource from 'vue-resource'
 Vue.use(vueResource)<% } %>
 
 Vue.config.debug = process.env.NODE_ENV !== 'production'<% if (includeRouter) { %>
 
-var VueRouter = require('vue-router')
+import VueRouter from 'vue-router'
+import { configRouter } from './router-config'
 Vue.use(VueRouter)
 
-var router = new VueRouter({
+const router = new VueRouter({
 })
+configRouter(router)
 
-require('./router-config')(router)
-var App = Vue.extend(require('./app.vue'))
+const App = Vue.extend(require('./app.vue'))
 router.start(App, '#app')<% } %><% if (!includeRouter) { %>
-var App = new Vue(require('./app.vue'))<% } %>
+const App = new Vue(require('./app.vue'))<% } %>

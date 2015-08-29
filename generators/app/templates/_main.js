@@ -2,6 +2,7 @@ import Vue from 'vue'<% if (includeResource) { %>
 import vueResource from 'vue-resource'<% } %><% if (includeRouter) { %>
 import VueRouter from 'vue-router'
 import { configRouter } from './router-config'<% } %>
+
 Vue.config.debug = process.env.NODE_ENV !== 'production'<% if (includeResource) { %>
 
 Vue.use(vueResource)<% } %><% if (includeRouter) {%>

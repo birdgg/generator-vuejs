@@ -15,7 +15,7 @@ $ yo vuejs
 ```
 npm run watch   
 npm run build	
-npm run server
+npm run serve
 ```
 ## License
 

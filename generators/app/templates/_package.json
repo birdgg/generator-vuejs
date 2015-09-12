@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "./node_modules/.bin/webpack-dev-server --hot --config webpack.server.js",
+    "serve": "./node_modules/.bin/webpack-dev-server --hot --config webpack.server.js",
     "build": "rm -rf build/* && webpack --config webpack.production.js",
     "watch": "webpack --watch"
   },

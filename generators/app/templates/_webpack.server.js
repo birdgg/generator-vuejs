@@ -13,9 +13,9 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.vue$/, loader: vue.withLoaders({
-        js: 'babel?optional[]=runtime',
-        css: ExtractTextPlugin.extract('css!postcss-loader')<% if (includeStylus) {, %>
-        stylus: ExtractTextPlugin.extract('css!postcss-loader!stylus')<% } %>
+        js: 'babel?optional[]=runtime',<% if (includeStylus) { %>
+        stylus: ExtractTextPlugin.extract('css!postcss-loader!stylus'),<% } %>
+        css: ExtractTextPlugin.extract('css!postcss-loader')
       }) },
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel?optional[]=runtime'},
       { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' }

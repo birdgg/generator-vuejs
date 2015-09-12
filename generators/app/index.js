@@ -68,9 +68,6 @@ module.exports = yeoman.generators.Base.extend({
     this._copyTpl('_webpack.server.js', 'webpack.server.js')
     this._copy('_gitignore', '.gitignore')
     this._copy('_eslintrc', '.eslintrc')
-    if (this.config.get('includeRouter')) {
-      this._copy('_router-config.js', './src/router-config.js')
-    }
   },
 
   _copy: function (from, to) {

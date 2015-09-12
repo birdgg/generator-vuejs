@@ -4,10 +4,15 @@
 </template>
 
 <script>
-export default {
-	el: '#app',
-	data: {
-		text: 'vue'
-	}
+export default {<% if (includeRouter) { %>
+	data() {
+    return {
+      text: 'vue'
+    }
+  }<% } else { %>
+  el: '#app',
+  data: {
+    text: 'vue'
+  }<% } %>
 }	
 </script>

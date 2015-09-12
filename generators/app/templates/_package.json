@@ -9,9 +9,9 @@
     "watch": "webpack --watch"
   },
   "dependencies": {<% if (includeRouter) { %>
-    "vue-router": "^0.5.2",<% } %><% if (includeResource) { %>
+    "vue-router": "^0.6.0",<% } %><% if (includeResource) { %>
     "vue-resource": "^0.1.15",<% } %>
-    "vue": "^0.12.12"
+    "vue": "^0.12.14"
   },
   "devDependencies": {<% if (includeStylus) { %>
     "stylus-loader": "^1.2.1",<% } %>

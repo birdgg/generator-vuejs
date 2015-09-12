@@ -1,9 +1,13 @@
 var webpack = require('webpack')
 var vue = require('vue-loader')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var autoprefixer = require('autoprefixer')
+var precss = require('precss')
+var csswring = require('csswring')
 
 module.exports = {
   entry: {
-    app: ['./src/main.js']
+    app: './src/main.js'
   },
   output: {
     path: './build',
@@ -12,7 +16,9 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.vue$/, loader: vue.withLoaders({
-        js: 'babel?optional[]=runtime'
+        js: 'babel?optional[]=runtime',
+        css: ExtractTextPlugin.extract('css!postcss-loader'),<% if (includeStylus) { %>
+        stylus: ExtractTextPlugin.extract('css!stylus!postcss-loader')<% } %>
       }) },
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel?optional[]=runtime'}
     ]
@@ -23,10 +29,16 @@ module.exports = {
         NODE_ENV: '"production"'
       }
     }),
+    new ExtractTextPlugin('[name].min.css', {
+      allChunks: true
+    }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false
       }
     })
-  ]
+  ],
+  postcss: function () {
+    return [csswring({removeAllComments: true}), autoprefixer, precss]
+  }
 }

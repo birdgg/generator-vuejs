@@ -1,6 +1,6 @@
 {
   "name": "generator-vuejs",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A simple Vue + Webpack yeoman generator",
   "license": "MIT",
   "main": "app/index.js",
@@ -23,7 +23,9 @@
     "vuejs",
     "babel",
     "es6",
-    "webpack"
+    "vue-router",
+    "webpack",
+    "postcss"
   ],
   "dependencies": {
     "chalk": "^1.0.0",

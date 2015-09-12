@@ -16,10 +16,11 @@ module.exports = {
     loaders: [
       { test: /\.vue$/, loader: vue.withLoaders({
         js: 'babel?optional[]=runtime',
-        css: ExtractTextPlugin.extract('css!postcss-loader'),<% if (includeStylus) { %>
-        stylus: ExtractTextPlugin.extract('css!stylus!postcss-loader')<% } %>
+        css: ExtractTextPlugin.extract('css!postcss-loader')<% if (includeStylus) {, %>
+        stylus: ExtractTextPlugin.extract('css!postcss-loader!stylus')<% } %>
       }) },
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel?optional[]=runtime'}
+      { test: /\.js$/, exclude: /node_modules/, loader: 'babel?optional[]=runtime'},
+      { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' }
     ]
   },
   plugins: [

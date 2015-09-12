@@ -2,7 +2,6 @@ var webpack = require('webpack')
 var vue = require('vue-loader')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var autoprefixer = require('autoprefixer')
-var precss = require('precss')
 var csswring = require('csswring')
 
 module.exports = {
@@ -39,6 +38,6 @@ module.exports = {
     })
   ],
   postcss: function () {
-    return [csswring({removeAllComments: true}), autoprefixer, precss]
+    return [csswring({removeAllComments: true}), autoprefixer]
   }
 }

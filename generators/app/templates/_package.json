@@ -10,7 +10,7 @@
   },
   "dependencies": {<% if (includeRouter) { %>
     "vue-router": "^0.6.0",<% } %><% if (includeResource) { %>
-    "vue-resource": "^0.1.15",<% } %>
+    "vue-resource": "^0.1.16",<% } %>
     "vue": "^0.12.14"
   },
   "devDependencies": {<% if (includeStylus) { %>

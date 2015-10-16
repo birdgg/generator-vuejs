@@ -9,16 +9,16 @@
     "watch": "webpack --watch"
   },
   "dependencies": {<% if (includeRouter) { %>
-    "vue-router": "^0.6.0",<% } %><% if (includeResource) { %>
+    "vue-router": "^0.7.1",<% } %><% if (includeResource) { %>
     "vue-resource": "^0.1.16",<% } %>
-    "vue": "^0.12.15"
+    "vue": "^0.12.16"
   },
   "devDependencies": {<% if (includeStylus) { %>
-    "stylus-loader": "^1.2.1",<% } %>
-    "vue-loader": "^3.0.3",
+    "stylus-loader": "^1.4.0",<% } %>
+    "vue-loader": "^4.0.3",
     "html-loader": "^0.3.0",
     "style-loader": "^0.12.4",
-    "css-loader": "^0.18.0",
+    "css-loader": "^0.19.0",
     "postcss-loader": "^0.6.0",
     "csswring": "^4.0.0",
     "autoprefixer": "^6.0.3",
@@ -27,6 +27,6 @@
     "babel-runtime": "^5.8.24",
     "webpack": "^1.12.2",
     "extract-text-webpack-plugin": "^0.8.2",
-    "webpack-dev-server": "^1.11.0"
+    "webpack-dev-server": "^1.12.0"
   }
 }

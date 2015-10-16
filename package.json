@@ -3,7 +3,6 @@
   "version": "0.1.8",
   "description": "A simple Vue + Webpack yeoman generator",
   "license": "MIT",
-  "main": "app/index.js",
   "repository": "birdeggegg/generator-vuejs",
   "author": {
     "name": "Junjie Xie",
@@ -14,7 +13,8 @@
     "test": "mocha"
   },
   "files": [
-    "generators"
+    "generators/0.12",
+    "generators/1.0"
   ],
   "keywords": [
     "yeoman-generator",

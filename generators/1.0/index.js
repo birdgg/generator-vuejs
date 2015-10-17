@@ -59,7 +59,6 @@ module.exports = yeoman.generators.Base.extend({
 
   writing: function () {
     this._copyTpl('_package.json', 'package.json')
-    this._copy('_devindex.html', './build/index.html')
     this._copy('_index.html', 'index.html')
     this._copyTpl('_main.js', './src/main.js')
     this._copyTpl('_app.vue', './src/app.vue')

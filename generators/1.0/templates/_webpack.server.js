@@ -3,12 +3,10 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var autoprefixer = require('autoprefixer')
 
 module.exports = {
-  entry: {
-    app: ['webpack/hot/dev-server', './src/main.js']
-  },
+  entry: './src/main.js',
   output: {
-    path: './build',
-    filename: 'bundle.js'
+    publicPath: '/build/',
+    filename: 'build.js'
   },
   module: {
     loaders: [
@@ -24,12 +22,8 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin('[name].css')
   ],
-  devtool: 'source-map',
+  devtool: '#source-map',
   postcss: function () {
     return [autoprefixer]
-  },
-  devServer: {
-    contentBase: './build',
-    historyApiFallback: true
   }
 }

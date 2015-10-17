@@ -16,7 +16,9 @@ module.exports = {
         js: 'babel?optional[]=runtime',<% if (includeStylus) { %>
         stylus: ExtractTextPlugin.extract('css!postcss-loader!stylus'),<% } %>
         css: ExtractTextPlugin.extract('css!postcss-loader')
-      }) },
+      }) },<% if (includeStylus) { %>
+      { test: /\.styl$/, loader: ExtractTextPlugin.extract('style', 'css!postcss!stylus') }, <% } %>
+      { test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css!postcss') },
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel?optional[]=runtime' },
       { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' }
     ]

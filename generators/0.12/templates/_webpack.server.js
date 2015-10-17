@@ -1,5 +1,4 @@
 var vue = require('vue-loader')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var autoprefixer = require('autoprefixer')
 
 module.exports = {
@@ -14,16 +13,15 @@ module.exports = {
     loaders: [
       { test: /\.vue$/, loader: vue.withLoaders({
         js: 'babel?optional[]=runtime',<% if (includeStylus) { %>
-        stylus: ExtractTextPlugin.extract('css!postcss-loader!stylus'),<% } %>
-        css: ExtractTextPlugin.extract('css!postcss-loader')
-      }) },
+        stylus: 'style!css!postcss-loader!stylus',<% } %>
+        css: 'style!css!postcss-loader'
+      }) },<% if (includeStylus) { %>
+      { test: /\.styl$/, loader: 'style!css!postcss!stylus' }, <% } %>
+      { test: /\.css$/, loader: 'style!css!postcss' },
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel?optional[]=runtime'},
       { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' }
     ]
   },
-  plugins: [
-    new ExtractTextPlugin('[name].css')
-  ],
   devtool: 'source-map',
   postcss: function () {
     return [autoprefixer]

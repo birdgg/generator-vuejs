@@ -15,7 +15,7 @@
   },
   "devDependencies": {<% if (includeStylus) { %>
     "stylus-loader": "^1.4.0",<% } %>
-    "vue-loader": "^4.0.3",
+    "vue-loader": "^4.0.4",
     "html-loader": "^0.3.0",
     "style-loader": "^0.12.4",
     "css-loader": "^0.19.0",

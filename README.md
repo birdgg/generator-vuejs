@@ -1,17 +1,13 @@
 A simple Vue + Webpack yeoman generator
-## Getting Started
-This generator default use babel transforms to all your JavaScript, so you don't need to write `lang` attribute for script tag in vue file  
-
-More infomation please refer to [vue-loader](https://github.com/vuejs/vue-loader)
-
-### Install && Usage
+## Install && Usage 
 ```
 $ npm install -g generator-vuejs
 $ mkdir myproject && cd myproject
-$ yo vuejs
+$ yo vuejs:0.12 //use vue 0.12.16
+$ yo vuejs:1.0  //try vue 1.0.0
 ```
 
-### Command
+## Command
 ```
 npm run watch   
 npm run build	

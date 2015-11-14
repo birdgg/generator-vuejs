@@ -33,10 +33,6 @@ module.exports = yeoman.generators.Base.extend({
         name: 'vue-resource',
         value: 'includeResource',
         checked: false
-      }, {
-        name: 'stylus',
-        value: 'includeStylus',
-        checked: false
       }]
     }]
 
@@ -48,11 +44,9 @@ module.exports = yeoman.generators.Base.extend({
 
       this.includeRouter = hasFeature('includeRouter')
       this.includeResource = hasFeature('includeResource')
-      this.includeStylus = hasFeature('includeStylus')
 
       this.config.set('includeRouter', this.includeRouter)
       this.config.set('includeResource', this.includeResource)
-      this.config.set('includeStylus', this.includeStylus)
       done()
     }.bind(this))
   },
@@ -63,9 +57,8 @@ module.exports = yeoman.generators.Base.extend({
     this._copyTpl('_main.js', './src/main.js')
     this._copyTpl('_app.vue', './src/app.vue')
     this._copyTpl('_webpack.config.js', 'webpack.config.js')
-    this._copyTpl('_webpack.production.js', 'webpack.production.js')
-    this._copyTpl('_webpack.server.js', 'webpack.server.js')
     this._copy('_gitignore', '.gitignore')
+    this._copy('_babelrc', '.babelrc')
     this._copy('_eslintrc', '.eslintrc')
   },
 

@@ -1,17 +1,18 @@
 A simple Vue + Webpack yeoman generator
+
+*NOTE* It is only support vue 1.0.x now
+
 ## Install && Usage 
 ```
 $ npm install -g generator-vuejs
 $ mkdir myproject && cd myproject
-$ yo vuejs:0.12 //use vue 0.12.16
-$ yo vuejs:1.0  //try vue 1.0.0
+$ yo vuejs
 ```
 
 ## Command
 ```
-npm run watch   
+npm run dev  
 npm run build	
-npm run serve
 ```
 ## License
 

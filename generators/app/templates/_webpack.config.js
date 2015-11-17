@@ -1,5 +1,3 @@
-var vue = require('vue-loader')
-
 module.exports = {
   entry: {
     app: './src/main.js'

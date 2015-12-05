@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Vue</title>
-</head>
-<body>
-<app></app>
-<script src="./build/bundle.js"></script>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <title><%= appname %></title>
+    <meta name="description" content="<%= appname %>">
+    <meta name="viewport" content="width=device-width">
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <app></app>
+    <script src="./build/bundle.js"></script>
+  </body>
 </html>

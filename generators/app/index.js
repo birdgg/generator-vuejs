@@ -13,7 +13,7 @@ module.exports = yeoman.generators.Base.extend({
 
     // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the cat\'s meow ' + chalk.red('GeneratorVue') + ' generator!'
+      'Welcome to the cat\'s meow ' + chalk.red('vuejs') + ' generator!'
     ))
 
     var prompts = [{
@@ -29,32 +29,52 @@ module.exports = yeoman.generators.Base.extend({
         name: 'vue-router',
         value: 'includeRouter',
         checked: false
+      },
+      {
+        name: 'vue-strap',
+        value: 'includeVuestrap',
+        checked: false
       }]
     }]
 
     this.prompt(prompts, function (answers) {
-      var features = answers.features || []
+      this.features = answers.features || []
       this.projectName = answers.project
 
-      function hasFeature (feat) { return features.indexOf(feat) !== -1 }
+      this._configFeatures([
+        'includeRouter',
+        'includeVuestrap'
+      ])
 
-      this.includeRouter = hasFeature('includeRouter')
-
-      this.config.set('includeRouter', this.includeRouter)
       done()
     }.bind(this))
   },
 
+  _hasFeature: function (feat) {
+    return this.features.indexOf(feat) !== -1
+  },
+
+  _configFeature: function (feat) {
+    this[feat] = this._hasFeature(feat)
+    this.config.set(feat, this[feat])
+  },
+
+  _configFeatures: function (possibleFeatures) {
+    possibleFeatures.forEach(this._configFeature.bind(this))
+  },
+
   writing: function () {
     this._copyTpl('_package.json', 'package.json')
-    this._copy('_index.html', 'index.html')
+    this._copyTpl('_index.html', 'index.html')
     this._copyTpl('_main.js', './src/main.js')
     this._copyTpl('_app.vue', './src/app.vue')
+    this._copyTpl('_styles.css', './src/styles.css')
     this._copyTpl('_webpack.config.js', 'webpack.config.js')
     this._copyTpl('_webpack.production.js', 'webpack.production.js')
     this._copy('_gitignore', '.gitignore')
     this._copy('_babelrc', '.babelrc')
     this._copy('_eslintrc', '.eslintrc')
+    this._copy('_editorconfig', '.editorconfig')
   },
 
   _copy: function (from, to) {

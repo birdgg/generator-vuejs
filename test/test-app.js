@@ -17,7 +17,9 @@ describe('generator vue:app', function () {
     assert.file([
       'package.json',
       '.editorconfig',
-      '.eslintrc'
+      '.eslintrc',
+      'src/app.vue',
+      'src/main.js',
     ]);
   });
 });

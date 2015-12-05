@@ -1,8 +1,8 @@
 A simple Vue + Webpack yeoman generator
 
-*NOTE* It is only support vue 1.0.x now
+**NOTE:** It only supports Vue 1.0.x now
 
-## Install && Usage 
+## Installation && Usage 
 ```
 $ npm install -g generator-vuejs
 $ mkdir myproject && cd myproject

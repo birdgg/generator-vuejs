@@ -11,7 +11,7 @@ $ yo vuejs
 
 ## Command
 ```
-npm run dev  
+npm run dev
 npm run build	
 ```
 ## License

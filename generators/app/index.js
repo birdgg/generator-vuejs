@@ -29,8 +29,7 @@ module.exports = yeoman.generators.Base.extend({
         name: 'vue-router',
         value: 'includeRouter',
         checked: false
-      },
-      {
+      }, {
         name: 'vue-strap',
         value: 'includeVuestrap',
         checked: false

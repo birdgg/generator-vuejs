@@ -1,3 +1,4 @@
+**This repo is no longer maintained, please use vue-cli instead**
 A simple Vue + Webpack yeoman generator
 
 **NOTE:** It only supports Vue 1.0.x now
